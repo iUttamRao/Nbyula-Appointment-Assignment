@@ -1,0 +1,28 @@
+{
+  "name": "nybula",
+  "version": "1.0.0",
+  "description": "\"# Nbyula-Appointment-Assignment\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iUttamRao/Nbyula-Appointment-Assignment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iUttamRao/Nbyula-Appointment-Assignment/issues"
+  },
+  "homepage": "https://github.com/iUttamRao/Nbyula-Appointment-Assignment#readme",
+  "dependencies": {
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.3",
+    "ejs-mate": "^4.0.0",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.6.5",
+    "nodemon": "^2.0.20"
+  }
+}
