@@ -10,25 +10,25 @@
 <body>
     <div class="center">
         <h1>SignUp</h1>
-        <form>
+        <form method="post" action="/register">
             <div class="txt_field">
-                <input type="text" required>
+                <input type="text" name="name" required>
                 <span></span>
                 <label>Name</label>
             </div>
             <div class="txt_field">
-                <input type="email" required>
+                <input type="email" name="email" required>
                 <span></span>
                 <label>Email</label>
             </div>
             <div class="txt_field">
-                <input type="password" required>
+                <input type="password" name="password" required>
                 <span></span>
                 <label>Password</label>
             </div>
             <input type="submit" value="SignUp">
             <div class="signup_link">
-                You already have an account? Please <a href="login.html">Login Here</a>
+                You already have an account? Please <a href="/login">Login Here</a>
             </div>
         </form>
     </div>
