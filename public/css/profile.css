@@ -177,7 +177,7 @@ span {
 
 /* Button */
 
-Button{
+.edit{
   margin-top:30px;
   width:100%;
   height:50px;
@@ -191,7 +191,7 @@ Button{
   outline:none;
 }
 
-Button:hover{
+.edit:hover{
   border-color:#2691d9;
   transition:.5s;
 }
