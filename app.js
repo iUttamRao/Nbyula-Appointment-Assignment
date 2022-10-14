@@ -5,6 +5,8 @@ if (process.env.NODE_ENV !== "production") {
 const express = require('express');
 const dbConfig = require('./db/config');
 const loginRoutes = require('./routes/login');
+const registerRoutes = require('./routes/register');
+const profileRoutes = require('./routes/profileRoutes')
 const { isAuthenticated } = require('./middlewares/isAuthenticated');
 const ejsMate = require('ejs-mate');
 const path = require('path')
@@ -43,6 +45,10 @@ app.get('/logout', (req, res) => {
   req.session.destroy();
   res.redirect('/login');
 })
+app.use('/register', registerRoutes);
+app.use('/appointments', appointmentRoutes);
+app.use('/profile', profileRoutes);
+
 
 const port = 8000;
 app.listen(port, () => {
