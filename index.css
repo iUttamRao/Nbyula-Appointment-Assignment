@@ -7,6 +7,8 @@ body {
 	margin: 0;
 	min-height: 100vh;
 }
+
+/* Nav-Bar */
 ul {
   margin: 0;
   padding: 0;
@@ -29,10 +31,12 @@ a {
 .logo {
 	margin: 0;
 	font-size: 1.45em;
+	margin-left:40px;
 }
 
 .main-nav {
 	margin-top: 5px;
+	margin-right:50px;
 }
 .logo a,
 .main-nav a {
@@ -40,6 +44,7 @@ a {
 	text-transform: uppercase;
 	text-align: center;
 	display: block;
+	
 }
 
 .main-nav a {
@@ -77,7 +82,7 @@ a {
     	
 		width: 100%;
 		margin: 0 auto;
-		max-width: 1150px;
+		/* max-width: 1150px; */
 	}
 
 }
@@ -91,9 +96,13 @@ a {
 
 }
 
-
+/* Heading */
 .upcoming{
 	text-decoration: underline wavy #2691d9 1px;
 	text-underline-offset:7px;
 	text-align: center;
 }
+
+/* Card */
+
+
