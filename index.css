@@ -15,7 +15,6 @@ ul {
   list-style: none;
 }
 
-
 h2,
 h3,
 a {
@@ -25,8 +24,6 @@ a {
 a {
 	text-decoration: none;
 }
-
-
 
 .logo {
 	margin: 0;
@@ -44,7 +41,6 @@ a {
 	text-transform: uppercase;
 	text-align: center;
 	display: block;
-	
 }
 
 .main-nav a {
@@ -68,8 +64,6 @@ a {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
-
-
 
 @media (min-width: 769px) {
 	.header,
