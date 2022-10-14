@@ -98,11 +98,29 @@ a {
 
 /* Heading */
 .upcoming{
-	text-decoration: underline wavy #2691d9 1px;
-	text-underline-offset:7px;
+	/* text-decoration: underline solid #2691d9 1px;
+	text-underline-offset:7px; */
+	margin-bottom: 50px;
 	text-align: center;
 }
 
 /* Card */
-
-
+.flex-container{
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.card {
+	box-shadow: 0 4px 8px 0 rgba(38, 145, 217, 1);
+	width: 100%;
+	max-width: 250px;
+	margin: 0 50px;
+	text-align: center;
+  }
+  .agenda {
+	color: grey;
+	font-size: 18px;
+  }
+  .title{
+	margin:0;
+  }
