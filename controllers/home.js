@@ -3,6 +3,7 @@ const Appointments = require('../models/Appointment');
 // const Appointment = require('../models/Appointment');
 
 module.exports.renderHomepage = async (req, res) => {
+    try{
     const userId = req.session.userID;
     const currentUser = await User.findById(userId);
     const appointmentsTaken = [];
@@ -16,7 +17,11 @@ module.exports.renderHomepage = async (req, res) => {
         appointmentsTaken.push(helper);
     }
     // const tuv = await User.find
-    console.log(appointmentsTaken);
+    // console.log(appointmentsTaken);
     // console.log(appoint)
-    res.status(201).render('index', {appointmentsTaken});
+    res.status(201).render('/', {appointmentsTaken});
+}
+catch(err){
+    res.redirect("/login");
+}
 }
