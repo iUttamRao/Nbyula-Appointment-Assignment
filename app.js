@@ -4,7 +4,10 @@ if (process.env.NODE_ENV !== "production") {
 
 const express = require('express');
 const dbConfig = require('./db/config');
+const homeRoutes = require('./routes/home')
 const loginRoutes = require('./routes/login');
+const methodOverride = require('method-override')
+const profileRoutes = require('./routes/profile');
 const registerRoutes = require('./routes/register');
 // const profileRoutes = require('./routes/profileRoutes')
 const appointmentRoutes = require('./routes/appointments');
@@ -14,19 +17,19 @@ const path = require('path')
 const session = require('express-session');
 const MongoStore = require("connect-mongo");
 const app = express();
-const dbUrl = "mongodb://localhost:27017/nybula";
+const dbUrl = process.env.DBURL || "mongodb://localhost:27017/nybula";
 
 app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
-
+app.use(methodOverride('_method'))
 
 // const secret = process.env.SECRET;
 
 app.use(session({
-    secret: "afdl;kkjlajflkfjlakj",
+    secret: process.env.SECRET,
     saveUninitialized: false,
     resave: false,
     store: MongoStore.create({
@@ -37,10 +40,10 @@ app.use(session({
     })
 }));
 
-app.get('/', isAuthenticated, (req, res) => {
-    res.status(201).render('index');
-})
-
+// app.get('/', isAuthenticated, (req, res) => {
+//     res.status(201).render('index');
+// })
+app.use('/', homeRoutes);
 app.use('/login', loginRoutes);
 app.get('/logout', (req, res) => {
   req.session.destroy();
@@ -48,7 +51,7 @@ app.get('/logout', (req, res) => {
 })
 app.use('/register', registerRoutes);
 app.use('/appointments', appointmentRoutes);
-//app.use('/profile', profileRoutes);
+app.use('/profile', profileRoutes);
 
 app.use("*", (req, res) => {
   res.send("<h1>Page Not Found</h1>");

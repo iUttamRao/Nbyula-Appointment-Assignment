@@ -1,6 +1,6 @@
 const User = require('../models/User');
 const Appointments = require('../models/Appointment');
-const Appointment = require('../models/Appointment');
+// const Appointment = require('../models/Appointment');
 
 module.exports.renderHomepage = async (req, res) => {
     const userId = req.session.userID;
